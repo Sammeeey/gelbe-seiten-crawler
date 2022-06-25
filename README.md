@@ -1,7 +1,10 @@
 # gelbe-seiten-crawler
 Scrapy Project to crawl https://www.gelbeseiten.de/
+- collects results which are visible to scrapy spider without further manipulation of website (no JS rendering etc.)
+  - spider doesn not obey the robots.txt of the target page, because of `ROBOTSTXT_OBEY = False` in [`settings.py`](https://github.com/Sammeeey/gelbe-seiten-crawler/blob/822e999e876df09bf61163045a5bc17affd8b0e5/gelbeS/gelbeS/settings.py)
+- avoids duplicates in output file by default
 
-## Installation (on windows 10; not tested)
+## Installation (on windows 10; tested - should work)
 1. clone repo
 2. enter repo folder: `cd gelbe-seiten-crawler`
 3. create virtual environment: `py -m venv venv`
