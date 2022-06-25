@@ -1,9 +1,20 @@
 # gelbe-seiten-crawler
 Scrapy Project to crawl https://www.gelbeseiten.de/
 
+## Installation (on windows 10; not tested)
+1. clone repo
+2. enter repo folder: `cd gelbe-seiten-crawler`
+3. create virtual environment: `py -m venv venv`
+4. activate virtual environment: `venv\Scripts\activate.bat`
+5. update pip: `py -m pip install --upgrade pip`
+6. install requirements: `pip install -r requirements.txt`
+7. enter folder which contains the `scrapy.cfg` file: `cd gelbeS`
+8. run/crawl spider as described below (*Usage*)
+
 ## Usage
-- use command line and navigate to crawler directory (which includes the `scrapy.cfg` file)
-- use `scrapy crawl` command in the following way
+1. use command line and navigate to crawler directory (which includes the `scrapy.cfg` file)
+2. run/crawl spider (`scrapy crawl` command) in the below descibed way
+3. find file with scraped data, choosen name and choosen format in `scrapy.cfg` directory
 
 `scrapy crawl gs -O 22-05-26_Beton.csv -a search_term=Beton`
 
@@ -11,7 +22,9 @@ Scrapy Project to crawl https://www.gelbeseiten.de/
 - `scrapy crawl` = run crawler
 - `gs` = (name of the crawler respective spider (find it in `.gelbeS/spiders/gs.py`)
 - `-O ` = [save the output as file](https://docs.scrapy.org/en/latest/intro/tutorial.html#storing-the-scraped-data) in current directory
-- `22-05-26_Beton.csv` = name of the file which should be saved (can be amended depending on crawled terms, date etc.)
+- `22-05-26_Beton.csv` = name of the file which should be saved
+  - name can be amended depending on crawled terms, date etc.
+  - choose your preferred [output file format](https://docs.scrapy.org/en/latest/topics/feed-exports.html#feed-exports) (here `.csv`)
 - `-a` = seemingly initializer to [pass a search term to the spider](https://stackoverflow.com/a/20938801)
 - `search_term=Beton` = search_term is a variable which gets passed to the spider (find it in `.gelbeS/spiders/gs.py`)
     - the passed term (here `Beton`) is the one that gets searched by requesting the respective gelbeseiten.de-URL
