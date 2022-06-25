@@ -15,3 +15,5 @@ Scrapy Project to crawl https://www.gelbeseiten.de/
 - `-a` = seemingly initializer to [pass a search term to the spider](https://stackoverflow.com/a/20938801)
 - `search_term=Beton` = search_term is a variable which gets passed to the spider (find it in `.gelbeS/spiders/gs.py`)
     - the passed term (here `Beton`) is the one that gets searched by requesting the respective gelbeseiten.de-URL
+
+![example command line crawl](https://github.com/Sammeeey/gelbe-seiten-crawler/blob/9747afae549858f941acaffd799dc96693d3b4cb/web-scraping-process.gif)
